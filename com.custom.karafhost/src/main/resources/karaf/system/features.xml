@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+    <feature name="karafbundle" version="0.0.1-SNAPSHOT">
+        <bundle start-level="50">mvn:com.custom/com.custom.karafbundle/0.0.1-SNAPSHOT</bundle>
+    </feature>
+    <feature name="scalabundle" version="0.0.1-SNAPSHOT">
+        <bundle start-level="50">mvn:com.custom/com.custom.scalabundle/0.0.1-SNAPSHOT</bundle>
+    </feature>
+    <feature name="karafservlet" version="0.0.1-SNAPSHOT">
+        <bundle start-level="50">mvn:com.custom/com.custom.karafservlet/0.0.1-SNAPSHOT</bundle>
+        <feature>http</feature>
+        <feature>war</feature>
+    </feature>     
+</features>

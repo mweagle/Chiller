@@ -1,0 +1,65 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+	<id>All</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<fileSets>
+		<!--  Include Karaf files -->
+		<fileSet>
+			<directory>${karaf.unpackedDirectory}</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>LICENSE</include>
+				<include>NOTICE</include>
+				<include>README</include>
+				<include>RELEASE-NOTES</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>
+		<!--   Binaries are special -->
+		<fileSet>
+			<directory>${karaf.unpackedDirectory}/bin</directory>
+			<outputDirectory>/bin</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<fileMode>0755</fileMode>
+		</fileSet>				
+		<fileSet>
+			<directory>${karaf.unpackedDirectory}/deploy</directory>
+			<outputDirectory>/deploy</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>
+		<fileSet>
+			<directory>${karaf.unpackedDirectory}/etc</directory>
+			<outputDirectory>/etc</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>	
+		<fileSet>
+			<directory>${karaf.unpackedDirectory}/lib</directory>
+			<outputDirectory>/lib</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>
+		<fileSet>
+			<directory>${karaf.unpackedDirectory}/system</directory>
+			<outputDirectory>/system</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+			<fileMode>0644</fileMode>
+		</fileSet>					
+	</fileSets>
+	<includeBaseDirectory>false</includeBaseDirectory>
+</assembly>

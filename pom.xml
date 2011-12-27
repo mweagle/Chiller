@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.custom</groupId>
+	<artifactId>com.custom</artifactId>
+	<version>${app.version}</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<app.version>0.0.1-SNAPSHOT</app.version>
+		<file.encoding>utf-8</file.encoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
+			<repository>
+			<id>org.apache</id>
+			<name>Apache Repos</name>
+			<url>http://repository.apache.org/</url>
+		</repository>	
+		<repository>
+			<id>org.jboss.community</id>
+			<name>JBoss Proxied Repos</name>
+			<url>https://repository.jboss.org/nexus/content/repositories</url>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.bundles.release</id>
+		    <name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+		    <url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+		<repository>
+		    <id>com.springsource.repository.bundles.external</id>
+		    <name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+		    <url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+		<repository>
+			<id>scala-tools.org-releases</id>
+			<name>Scala-tools Maven2 Repository</name>
+			<url>http://scala-tools.org/repo-releases</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>scala-tools.org</id>
+			<name>Scala-tools Maven2 Repository</name>
+			<url>http://scala-tools.org/repo-releases</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- OSGi -->
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.core</artifactId>
+				<version>4.2.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.osgi</groupId>
+				<artifactId>org.osgi.compendium</artifactId>
+				<version>4.2.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- Scala -->
+			<dependency>
+				<groupId>org.scala-lang</groupId>
+				<artifactId>scala-library</artifactId>
+				<version>2.9.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.scala-lang</groupId>
+				<artifactId>scala-compiler</artifactId>
+				<version>2.9.1</version>
+			</dependency>
+			<!-- Logging -->
+			<dependency>
+				<groupId>org.ops4j.pax.logging</groupId>
+				<artifactId>pax-logging-api</artifactId>
+				<version>1.6.3</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.ops4j.pax.logging</groupId>
+				<artifactId>pax-logging-service</artifactId>
+				<version>1.6.3</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- Web Application API -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.4</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
